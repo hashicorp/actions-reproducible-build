@@ -79,7 +79,7 @@ inputs:
     description: >
       Build with the clean flag.
     required: false
-    default: true
+    default: 'true'
 
 runs:
   using: composite
