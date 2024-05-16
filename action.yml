@@ -125,10 +125,11 @@ runs:
       shell: bash
       working-directory: ${{ inputs.work_dir }}
       run: |
-        if [ "${CLEAN}" == "false"] ; then
+        if [ "${CLEAN}" == "false" ]; then
           $RUN_CLI build -json
         else
           $RUN_CLI build -clean -json
+        fi
       env:
         CLEAN: ${{ inputs.clean }}
 
