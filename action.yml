@@ -75,6 +75,12 @@ inputs:
     required: false
     default: 0
 
+  clean:
+    description: >
+      Build with the clean flag.
+    required: false
+    default: true
+
 runs:
   using: composite
   steps:
@@ -118,7 +124,13 @@ runs:
     - name: Run Primary Build
       shell: bash
       working-directory: ${{ inputs.work_dir }}
-      run: $RUN_CLI build -clean -json
+      run: |
+        if [ "${CLEAN}" == "false"] ; then
+          $RUN_CLI build -json
+        else
+          $RUN_CLI build -clean -json
+      env:
+        CLEAN: ${{ inputs.clean }}
 
     # Upload Primary Build
     - name: Upload Primary Zip
