@@ -13,7 +13,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: super-linter/super-linter@b4515bd4ad9d0aa4681960e053916ab991bdbe96 # v6.8.0
+      - uses: super-linter/super-linter@02a1172d274f021e4c70f66e23f1085eadd1064b # v7.0.0
 
   go-tests:
     runs-on: ubuntu-latest
