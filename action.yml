@@ -80,7 +80,7 @@ runs:
   steps:
 
     # Setup Go for CLI compilation.
-    - uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5.0.0
+    - uses: actions/setup-go@0a12ed9d6a96ab950c8f026ed9f722fe0da7ef32 # v5.0.2
       with:
         go-version: 1.18
         cache: false
@@ -91,7 +91,7 @@ runs:
       run: ./action-setup
 
     # Setup Go
-    - uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5.0.0
+    - uses: actions/setup-go@0a12ed9d6a96ab950c8f026ed9f722fe0da7ef32 # v5.0.2
       with:
         go-version: ${{ inputs.go_version }}
         cache: false
@@ -122,7 +122,7 @@ runs:
 
     # Upload Primary Build
     - name: Upload Primary Zip
-      uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+      uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
       with:
         name: ${{ env.ZIP_NAME }}
         path: ${{ env.ZIP_PATH_PRIMARY }}
@@ -138,7 +138,7 @@ runs:
     # Upload Local Verification Build
     - name: Upload Local Verification Zip
       if: inputs.reproducible == 'assert' || inputs.reproducible == 'report'
-      uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+      uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
       with:
         name: ${{ env.ZIP_NAME }}.local-verification-build.zip
         path: ${{ env.ZIP_PATH_VERIFICATION }}
@@ -171,7 +171,7 @@ runs:
     # Upload Verification Result
     - name: Upload Verification Result
       if: inputs.reproducible == 'assert' || inputs.reproducible == 'report'
-      uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+      uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
       with:
         name: ${{ env.ZIP_NAME }}.verificationresult.json
         path: ${{ env.VERIFICATION_RESULT }}
