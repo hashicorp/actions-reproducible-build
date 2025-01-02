@@ -32,7 +32,7 @@ jobs:
           - { reproducible: report, want: success }
           - { reproducible: nope,   want: success }
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: select OS value
         run: case "${{ runner.os }}" in macOS) echo "SELECTED_OS=darwin" >> "$GITHUB_ENV" ;; Linux) echo "SELECTED_OS=linux" >> "$GITHUB_ENV" ;; esac
       - uses: ./self-test
@@ -57,7 +57,7 @@ jobs:
           - { reproducible: report, want: success }
           - { reproducible: nope,   want: success }
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: select OS value
         run: case "${{ runner.os }}" in macOS) echo "SELECTED_OS=darwin" >> "$GITHUB_ENV" ;; Linux) echo "SELECTED_OS=linux" >> "$GITHUB_ENV" ;; esac
       - uses: ./self-test
@@ -91,7 +91,7 @@ jobs:
           - { reproducible: report, os: darwin, arch: arm64, want: success }
           - { reproducible: nope,   os: darwin, arch: arm64, want: success }
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         if: runner.os == 'macOS'
       - uses: ./self-test
         if: runner.os == 'macOS'
@@ -117,7 +117,7 @@ jobs:
           - { reproducible: report, want: success }
           - { reproducible: nope,   want: success }
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: select OS value
         run: case "${{ runner.os }}" in macOS) echo "SELECTED_OS=darwin" >> "$GITHUB_ENV" ;; Linux) echo "SELECTED_OS=linux" >> "$GITHUB_ENV" ;; esac
       - uses: ./self-test
@@ -144,7 +144,7 @@ jobs:
           - { reproducible: report, want: success }
           - { reproducible: nope,   want: success }
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: select OS value
         run: case "${{ runner.os }}" in macOS) echo "SELECTED_OS=darwin" >> "$GITHUB_ENV" ;; Linux) echo "SELECTED_OS=linux" >> "$GITHUB_ENV" ;; esac
       - uses: ./self-test
@@ -170,7 +170,7 @@ jobs:
           - { reproducible: report, want: failure }
           - { reproducible: nope,   want: failure }
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: select OS value
         run: case "${{ runner.os }}" in macOS) echo "SELECTED_OS=darwin" >> "$GITHUB_ENV" ;; Linux) echo "SELECTED_OS=linux" >> "$GITHUB_ENV" ;; esac
       - uses: ./self-test
